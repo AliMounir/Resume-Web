@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="w3.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
@@ -27,13 +28,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-display-container">
           <img src="portrait.jpg" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2 class="w3-text-black w3-white w3-round-large"> &nbsp;Ali Mounir&nbsp;</h2>
+            <h2 class="w3-text-black w3-white w3-round-large animate__animated animate__pulse"> &nbsp;Ali Mounir&nbsp;</h2>
           </div>
         </div>
         <div class="w3-container">
           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>Student at University Stuttgart</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Cairo, Egypt</p>
-          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue"></i>March 7<sup>th</sup>, 2002 (19)</p>
+          <p id="birthDate"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue"></i>March 7<sup>th</sup>, 2002 (19)</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>alimounir456@gmail.com</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>+201098847771</p>
           <p><i class="fa fa-instagram fa-fw w3-margin-right w3-large w3-text-blue"></i>@_alimounir</p>
@@ -119,7 +120,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <!-- Right Column -->
       <div class="w3-twothird">
 
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <div class="w3-container w3-card w3-white w3-margin-bottom animate__animated animate__fadeInUp">
+          
+          <span class="fa fa-pencil-square-o w3-large w3-right w3-margin-top w3-hover-text-gray w3-text-white"></span>
+
           <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>About Me</h2>
 
           <div class="w3-container">
@@ -132,7 +136,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
 
 
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <div class="w3-container w3-card w3-white w3-margin-bottom animate__animated animate__fadeInUp">
           <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Education</h2>
 
           <div class="w3-container">
@@ -150,7 +154,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
         </div>
   
-        <div class="w3-container w3-card w3-white">
+        <div class="w3-container w3-card w3-white animate__animated animate__fadeInUp">
           <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-briefcase fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Work</h2>
           <div class="w3-container">
             <h5 class="w3-opacity"><b>Internship at Microsoft Egypt</b></h5>
@@ -172,7 +176,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <br>
   
-        <div class="w3-container w3-card w3-white">
+        <div class="w3-container w3-card w3-white animate__animated animate__fadeInUp">
           <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-pencil fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>External Skills & Certifications</h2>
           <div class="w3-container">
             <h5 class="w3-opacity"><i class="fa fa-paint-brush fa-fw w3-margin-right"></i><b>Graphic Design & Digital Arts</b></h5>
@@ -204,6 +208,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <!-- End Page Container -->
 </div>
 
+
+
 <footer class="w3-container w3-blue w3-center w3-padding-large">
   <p>Find me on social media.</p>
   <a class="fa fa-facebook-official w3-hover-opacity w3-large" href="https://www.facebook.com/profile.php?id=100006939468259" style="text-decoration:none;"></a>&nbsp;
@@ -211,6 +217,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <a class="fa fa-github w3-hover-opacity w3-large" href="https://github.com/AliMounir" style="text-decoration:none;"></a>&nbsp;
   <a class="fa fa-twitter w3-hover-opacity w3-large" href="https://twitter.com/ali_mounir5" style="text-decoration:none;"></a>
 </footer>
+
+<script>
+  function name()
+  {
+  var input = document.getElementById("birthDate");
+  alert(input);
+  }
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </body>
 </html>
