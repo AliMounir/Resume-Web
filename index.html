@@ -10,82 +10,103 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Roboto", sans-serif
+  }
+
+  #parent-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
 </style>
 
 <body class="w3-light-grey">
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <!-- Page Container -->
+  <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
+    <!-- The Grid -->
+    <div class="w3-row-padding">
 
-    <!-- Left Column -->
-    <div class="w3-third">
+      <!-- Left Column -->
+      <div class="w3-third">
 
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="portrait.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2 class="w3-text-black w3-white w3-round-large animate__animated animate__pulse"> &nbsp;Ali Mounir&nbsp;</h2>
-          </div>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>Student at University Stuttgart</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Cairo, Egypt</p>
-          <p id="birthDate"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue"></i>March 7<sup>th</sup>, 2002 (19)</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>alimounir456@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>+201098847771</p>
-          <p><i class="fa fa-instagram fa-fw w3-margin-right w3-large w3-text-blue"></i>@_alimounir</p>
-          <p><i class="fa fa-code-fork fa-fw w3-margin-right w3-large w3-text-blue"></i>github.com/AliMounir</p>
-          <hr>
-
-
-          <!-- LANGUAGES -->
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-blue"></i>Languages</b></p>
-          <p>&nbsp;Arabic</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-blue" style="height:24px;width:100%"></div>
-          </div>
-          <p>&nbsp;English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-blue" style="height:24px;width:90%"></div>
-          </div>
-          <p>&nbsp;German</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-blue" style="height:24px;width:85%"></div>
-          </div>
-          <p>&nbsp;French</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-blue" style="height:24px;width:25%"></div>
-          </div>
-          <br>
-
-          <!-- SOFT SKILLS -->
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-blue"></i>Soft Skills</b></p>
-          <p>&nbsp;Leadership</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="height:24px;width:90%"></div>
-          </div>
-          <p>&nbsp;Problem Solving</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="height:24px;width:80%">
+        <div class="w3-white w3-text-grey w3-card-4">
+          <div class="w3-display-container">
+            <img src="portrait.jpg" style="width:100%" alt="Avatar">
+            <div class="w3-display-bottomleft w3-container w3-text-black">
+              <h2 class="w3-text-black w3-white w3-round-large animate__animated animate__pulse"> &nbsp;Ali Mounir&nbsp;
+              </h2>
+            </div>
+            <div class="w3-display-topright w3-container w3-text-black">
+              <span id="show-modal" class="w3-button w3-text-black w3-hover-text-yellow fa fa-pencil-square-o"></span>
             </div>
           </div>
-          <p>&nbsp;Communication</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="height:24px;width:70%"></div>
-          </div>
-          <p>&nbsp;Time Management</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="height:24px;width:50%"></div>
-          </div>
-          <br>
+          <div class="w3-container">
+            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>Student at University
+              Stuttgart</p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Cairo, Egypt</p>
+            <p id="birthDate"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue"></i>March
+              7<sup>th</sup>, 2002 (19)</p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>alimounir456@gmail.com</p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>+201098847771</p>
+            <p><i class="fa fa-instagram fa-fw w3-margin-right w3-large w3-text-blue"></i>@_alimounir</p>
+            <p><i class="fa fa-code-fork fa-fw w3-margin-right w3-large w3-text-blue"></i>github.com/AliMounir</p>
+            <hr>
 
-          <!-- INTERESTS -->
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-puzzle-piece fa-fw w3-margin-right w3-text-blue"></i>Interests</b></p>
-          <!-- <p>&nbsp;English</p>
+
+            <!-- LANGUAGES -->
+            <p class="w3-large w3-text-theme"><b><i
+                  class="fa fa-globe fa-fw w3-margin-right w3-text-blue"></i>Languages</b></p>
+            <p>&nbsp;Arabic</p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-blue" style="height:24px;width:100%"></div>
+            </div>
+            <p>&nbsp;English</p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-blue" style="height:24px;width:90%"></div>
+            </div>
+            <p>&nbsp;German</p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-blue" style="height:24px;width:85%"></div>
+            </div>
+            <p>&nbsp;French</p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-blue" style="height:24px;width:25%"></div>
+            </div>
+            <br>
+
+            <!-- SOFT SKILLS -->
+            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-blue"></i>Soft Skills</b></p>
+            <p>&nbsp;Leadership</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="height:24px;width:90%"></div>
+            </div>
+            <p>&nbsp;Problem Solving</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="height:24px;width:80%">
+              </div>
+            </div>
+            <p>&nbsp;Communication</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="height:24px;width:70%"></div>
+            </div>
+            <p>&nbsp;Time Management</p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="height:24px;width:50%"></div>
+            </div>
+            <br>
+
+            <!-- INTERESTS -->
+            <p class="w3-large w3-text-theme"><b><i
+                  class="fa fa-puzzle-piece fa-fw w3-margin-right w3-text-blue"></i>Interests</b></p>
+            <!-- <p>&nbsp;English</p>
           <div class="w3-light-grey w3-round-xlarge">
             <div class="w3-round-xlarge w3-blue" style="height:24px;width:100%"></div>
           </div>
@@ -97,25 +118,25 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <div class="w3-light-grey w3-round-xlarge">
             <div class="w3-round-xlarge w3-blue" style="height:24px;width:25%"></div>
           </div> -->
-          <p>
-            <span class="w3-tag w3-round w3-blue">Sports</span>
-            <span class="w3-tag w3-round w3-blue">Digital Arts</span>
-            <span class="w3-tag w3-round w3-blue">Formula 1</span>
-            <span class="w3-tag w3-round w3-blue">Basketball</span>
-          </p>
-          <p>
-            <span class="w3-tag w3-round w3-blue">Graphic Design</span>
-            <span class="w3-tag w3-round w3-blue">Filmmaking</span>
-            <span class="w3-tag w3-round w3-blue">Photgraphy</span>
-            <span class="w3-tag w3-round w3-blue">Food</span>
-          </p>
-          <!-- <p><span class="w3-tag w3-blue w3-round">Sports</span> <span class="w3-tag w3-blue w3-round">Sports</span></p> -->
-          <br>
-        </div>
-      </div><br>
+            <p>
+              <span class="w3-tag w3-round w3-blue">Sports</span>
+              <span class="w3-tag w3-round w3-blue">Digital Arts</span>
+              <span class="w3-tag w3-round w3-blue">Formula 1</span>
+              <span class="w3-tag w3-round w3-blue">Basketball</span>
+            </p>
+            <p>
+              <span class="w3-tag w3-round w3-blue">Graphic Design</span>
+              <span class="w3-tag w3-round w3-blue">Filmmaking</span>
+              <span class="w3-tag w3-round w3-blue">Photgraphy</span>
+              <span class="w3-tag w3-round w3-blue">Food</span>
+            </p>
+            <!-- <p><span class="w3-tag w3-blue w3-round">Sports</span> <span class="w3-tag w3-blue w3-round">Sports</span></p> -->
+            <br>
+          </div>
+        </div><br>
 
-    <!-- End Left Column -->
-    </div>
+        <!-- End Left Column -->
+      </div>
 
       <!-- Right Column -->
       <div class="w3-twothird">
@@ -202,30 +223,58 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <!-- End Right Column -->
       </div>
 
-  <!-- End Grid -->
+    <!-- End Grid -->
+
+
+    <!-- End Page Container -->
   </div>
 
-  <!-- End Page Container -->
-</div>
+
+
+  <footer class="w3-container w3-blue w3-center w3-padding-large">
+    <p>Find me on social media.</p>
+    <a class="fa fa-facebook-official w3-hover-opacity w3-large"
+      href="https://www.facebook.com/profile.php?id=100006939468259" style="text-decoration:none;"></a>&nbsp;
+    <a class="fa fa-instagram w3-hover-opacity w3-large" href="https://www.instagram.com/_alimounir/"
+      style="text-decoration:none;"></a>&nbsp;
+    <a class="fa fa-github w3-hover-opacity w3-large" href="https://github.com/AliMounir"
+      style="text-decoration:none;"></a>&nbsp;
+    <a class="fa fa-twitter w3-hover-opacity w3-large" href="https://twitter.com/ali_mounir5"
+      style="text-decoration:none;"></a>
+  </footer>
 
 
 
-<footer class="w3-container w3-blue w3-center w3-padding-large">
-  <p>Find me on social media.</p>
-  <a class="fa fa-facebook-official w3-hover-opacity w3-large" href="https://www.facebook.com/profile.php?id=100006939468259" style="text-decoration:none;"></a>&nbsp;
-  <a class="fa fa-instagram w3-hover-opacity w3-large" href="https://www.instagram.com/_alimounir/" style="text-decoration:none;"></a>&nbsp;
-  <a class="fa fa-github w3-hover-opacity w3-large" href="https://github.com/AliMounir" style="text-decoration:none;"></a>&nbsp;
-  <a class="fa fa-twitter w3-hover-opacity w3-large" href="https://twitter.com/ali_mounir5" style="text-decoration:none;"></a>
-</footer>
+  <div id="modal-container" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('modal-container').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+  </div>
 
-<script>
-  function name()
-  {
-  var input = document.getElementById("birthDate");
-  alert(input);
-  }
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    function name() {
+      var input = document.getElementById("birthDate");
+      alert(input);
+    }
+
+    function fillmodal() {
+      console.log("ayy 7aga");
+      $("#modal-content").html('<form class="w3-container"><p><label>First Name</label><input class="w3-input" type="text"></p><p><label>Last Name</label><input class="w3-input" type="text"></p><p><label>Email</label><input class="w3-input" type="text"></p></form>');
+      $("#modal-container").css({ display: 'block' });
+    }
+    $("#show-modal").click(fillmodal);
+
+
+  </script>
+
 
 </body>
+
 </html>
