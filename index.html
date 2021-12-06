@@ -45,7 +45,7 @@
               </h2>
             </div>
             <div class="w3-display-topright w3-container w3-text-black">
-              <span id="show-modal" class="w3-button w3-text-black w3-hover-text-yellow fa fa-pencil-square-o"></span>
+              <span id="show-modal" class="w3-button w3-text-black w3-hover-text-yellow fa fa-pencil-square-o" onclick="document.getElementById('modal-container').style.display='block'"></span>
             </div>
           </div>
           <div class="w3-container">
@@ -244,13 +244,24 @@
   </footer>
 
 
-
+  <!-- MODAL -->
   <div id="modal-container" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('modal-container').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
-        <div id="modal-content"></div>
+        <div id="modal-content">
+          <form class="w3-container">
+            <p><label>Full Name</label><input class="w3-input" type="text"></p>
+            <p><label>Current Job</label><input class="w3-input" type="text"></p>
+            <p><label>Adress</label><input class="w3-input" type="text"></p>
+            <p><label>Date of Birth</label><input class="w3-input" type="text"></p>
+            <p><label>Email</label><input class="w3-input" type="text"></p>
+            <p><label>Phone Number</label><input class="w3-input" type="text"></p>
+            <p><label>Instagram</label><input class="w3-input" type="text"></p>
+            <p><label>Github</label><input class="w3-input" type="text"></p>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -266,10 +277,10 @@
 
     function fillmodal() {
       console.log("ayy 7aga");
-      $("#modal-content").html('<form class="w3-container"><p><label>First Name</label><input class="w3-input" type="text"></p><p><label>Last Name</label><input class="w3-input" type="text"></p><p><label>Email</label><input class="w3-input" type="text"></p></form>');
+      $("#modal-content").html('<form class="w3-container"><p><label>Full Name</label><input class="w3-input" type="text"></p><p><label>Current Name</label><input class="w3-input" type="text"></p><p><label>Email</label><input class="w3-input" type="text"></p></form>');
       $("#modal-container").css({ display: 'block' });
     }
-    $("#show-modal").click(fillmodal);
+    // $("#show-modal").click(fillmodal);
 
 
   </script>
