@@ -44,7 +44,6 @@
               <h2 class="w3-text-black w3-white w3-round-large animate__animated animate__pulse" id="name"> &nbsp;Ali Mounir&nbsp;</h2>
             </div>
             <div class="w3-display-topright w3-container w3-text-black">
-              <span id="show-modal" class="w3-button w3-text-black w3-hover-text-yellow fa fa-pencil-square-o" onclick="document.getElementById('modal-container').style.display='block'"></span>
               <!-- <button class="w3-button" id="loadjson">Load</button> -->
             </div>
           </div>
@@ -271,6 +270,9 @@
   </div>
 
 
+  <div id="showmodal" class="w3-button w3-display-bottomright w3-margin-right w3-margin-bottom w3-blue w3-round-xxlarge" style="position: fixed;" onclick="document.getElementById('modal-container').style.display='block'"><i class="w3-padding-small w3-large fa fa-pencil"></i></div>
+
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -327,16 +329,16 @@
   <script>
   function saveChanges() {
     var name = document.getElementById("new-name").value;
-    document.getElementById("name").innerHTML = name;
+    document.getElementById("name").innerHTML = "&nbsp;" + name + "&nbsp";
 
     var job = document.getElementById("new-job").value;
-    document.getElementById("job").innerHTML = job;
+    document.getElementById("job").innerHTML = "<i class='fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue'></i>" + job;
 
     var address = document.getElementById("new-address").value;
-    document.getElementById("address").innerHTML = address;
+    document.getElementById("address").innerHTML = "<i class='fa fa-home fa-fw w3-margin-right w3-large w3-text-blue'></i>" + address;
 
     var birthdate = document.getElementById("new-birthdate").value;
-    document.getElementById("birthdate").innerHTML = birthdate;
+    document.getElementById("birthdate").innerHTML = "<i class='fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue'></i>" + birthdate;
 
   }
   </script>
