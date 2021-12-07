@@ -49,12 +49,12 @@
             </div>
           </div>
           <div class="w3-container">
-            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>Student at University
+            <p id="job"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>Student at University
               Stuttgart</p>
-            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Cairo, Egypt</p>
-            <p id="birthDate"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue"></i>March
+            <p id="address"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Cairo, Egypt</p>
+            <p id="birthdate"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue"></i>March
               7<sup>th</sup>, 2002 (19)</p>
-            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>alimounir456@gmail.com</p>
+            <p id="email"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>alimounir456@gmail.com</p>
             <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>+201098847771</p>
             <p><i class="fa fa-instagram fa-fw w3-margin-right w3-large w3-text-blue"></i>@_alimounir</p>
             <p><i class="fa fa-code-fork fa-fw w3-margin-right w3-large w3-text-blue"></i>github.com/AliMounir</p>
@@ -253,15 +253,16 @@
         <div id="modal-content">
           <form class="w3-container w3-ul" action="#">
             <p>Profile:</p>
-            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="name" name="name" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="job" name="job" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="address" name="address" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="birthdate" name="birthdate" type="date"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="email" name="email" type="email"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="new-address" name="address" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
+            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="new-email" name="email" type="email"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
             <div id="modal-new-bullet"></div>
             <br>
             <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
-            <p><input type="submit" value="Submit" onclick=""></p>
+            <p><input type="submit" value="Submit" onclick="saveChanges()"></p>
 
           </form>
         </div>
@@ -321,6 +322,36 @@
     }
 
     $("#add-button").on('click',addBullet);
+  </script>
+
+  <script>
+  function saveChanges() {
+    var name = document.getElementById("new-name").value;
+    document.getElementById("name").innerHTML = name;
+
+    var job = document.getElementById("new-job").value;
+    document.getElementById("job").innerHTML = job;
+
+    var address = document.getElementById("new-address").value;
+    document.getElementById("address").innerHTML = address;
+
+    var birthdate = document.getElementById("new-birthdate").value;
+    document.getElementById("birthdate").innerHTML = birthdate;
+
+  }
+  </script>
+
+  <script>
+  function calculate_age(dob) { 
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms); 
+
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+  }
+
+  console.log(calculate_age(new Date(1982, 11, 4)));
+
+  console.log(calculate_age(new Date(1962, 1, 1)));
   </script>
 
 
