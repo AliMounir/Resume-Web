@@ -254,7 +254,7 @@
           <form class="w3-container" action="#">
             <p><label for="name">Full Name</label><input class="w3-input" id="name" name="name" type="text"></p>
             <p><label for="job">Current Job</label><input class="w3-input" id="job" name="job" type="text"></p>
-            <p><label for="adress">Adress</label><input class="w3-input" id="adress" name="adress" type="text"></p>
+            <p><label for="address">Address</label><input class="w3-input" id="address" name="address" type="text"></p>
             <p><label for="birthdate">Date of Birth</label><input class="w3-input" id="birthdate" name="birthdate" type="date"></p>
             <p><label for="email">Email</label><input class="w3-input" id="email" name="email" type="email"></p>
             <p><input type="submit" value="Submit" onclick=""></p>
@@ -270,9 +270,9 @@
 
   <script>
       $(document).ready(function(){
-          $.getJSON("test.json", function(data){
+          $.getJSON("init-data.json", function(data){
               console.log(data.name); // Prints: Harry
-              console.log(data.age); // Prints: 14
+              console.log(data.job); // Prints: 14
           }).fail(function(){
               console.log("An error has occurred.");
           });
