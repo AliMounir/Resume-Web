@@ -251,15 +251,14 @@
         <span onclick="document.getElementById('modal-container').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
         <div id="modal-content">
-          <form class="w3-container">
-            <p><label>Full Name</label><input class="w3-input" type="text"></p>
-            <p><label>Current Job</label><input class="w3-input" type="text"></p>
-            <p><label>Adress</label><input class="w3-input" type="text"></p>
-            <p><label>Date of Birth</label><input class="w3-input" type="text"></p>
-            <p><label>Email</label><input class="w3-input" type="text"></p>
-            <p><label>Phone Number</label><input class="w3-input" type="text"></p>
-            <p><label>Instagram</label><input class="w3-input" type="text"></p>
-            <p><label>Github</label><input class="w3-input" type="text"></p>
+          <form class="w3-container" action="#">
+            <p><label for="name">Full Name</label><input class="w3-input" id="name" name="name" type="text"></p>
+            <p><label for="job">Current Job</label><input class="w3-input" id="job" name="job" type="text"></p>
+            <p><label for="adress">Adress</label><input class="w3-input" id="adress" name="adress" type="text"></p>
+            <p><label for="birthdate">Date of Birth</label><input class="w3-input" id="birthdate" name="birthdate" type="date"></p>
+            <p><label for="email">Email</label><input class="w3-input" id="email" name="email" type="email"></p>
+            <p><input type="submit" value="Submit" onclick=""></p>
+
           </form>
         </div>
       </div>
@@ -267,8 +266,19 @@
   </div>
 
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+      $(document).ready(function(){
+          $.getJSON("test.json", function(data){
+              console.log(data.name); // Prints: Harry
+              console.log(data.age); // Prints: 14
+          }).fail(function(){
+              console.log("An error has occurred.");
+          });
+      });
+  </script>
+
   <script>
     function name() {
       var input = document.getElementById("birthDate");
@@ -281,8 +291,6 @@
       $("#modal-container").css({ display: 'block' });
     }
     // $("#show-modal").click(fillmodal);
-
-
   </script>
 
 
