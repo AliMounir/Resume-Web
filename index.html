@@ -41,11 +41,11 @@
           <div class="w3-display-container">
             <img src="portrait.jpg" style="width:100%" alt="Avatar">
             <div class="w3-display-bottomleft w3-container w3-text-black">
-              <h2 class="w3-text-black w3-white w3-round-large animate__animated animate__pulse"> &nbsp;Ali Mounir&nbsp;
-              </h2>
+              <h2 class="w3-text-black w3-white w3-round-large animate__animated animate__pulse" id="name"> &nbsp;Ali Mounir&nbsp;</h2>
             </div>
             <div class="w3-display-topright w3-container w3-text-black">
               <span id="show-modal" class="w3-button w3-text-black w3-hover-text-yellow fa fa-pencil-square-o" onclick="document.getElementById('modal-container').style.display='block'"></span>
+              <!-- <button class="w3-button" id="loadjson">Load</button> -->
             </div>
           </div>
           <div class="w3-container">
@@ -251,12 +251,16 @@
         <span onclick="document.getElementById('modal-container').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
         <div id="modal-content">
-          <form class="w3-container" action="#">
-            <p><label for="name">Full Name</label><input class="w3-input" id="name" name="name" type="text"></p>
-            <p><label for="job">Current Job</label><input class="w3-input" id="job" name="job" type="text"></p>
-            <p><label for="address">Address</label><input class="w3-input" id="address" name="address" type="text"></p>
-            <p><label for="birthdate">Date of Birth</label><input class="w3-input" id="birthdate" name="birthdate" type="date"></p>
-            <p><label for="email">Email</label><input class="w3-input" id="email" name="email" type="email"></p>
+          <form class="w3-container w3-ul" action="#">
+            <p>Profile:</p>
+            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="name" name="name" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="job" name="job" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="address" name="address" type="text"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="birthdate" name="birthdate" type="date"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="email" name="email" type="email"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <div id="modal-new-bullet"></div>
+            <br>
+            <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
             <p><input type="submit" value="Submit" onclick=""></p>
 
           </form>
@@ -267,30 +271,56 @@
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <script>
-      $(document).ready(function(){
-          $.getJSON("init-data.json", function(data){
-              console.log(data.name); // Prints: Harry
-              console.log(data.job); // Prints: 14
-          }).fail(function(){
-              console.log("An error has occurred.");
+  <!-- <script>
+    $(document).ready(function(){
+      $("span").click(function(){
+        $.getJSON("init-data", function(result){
+          $.each(result, function(i, field){
+            $("div").append(field + " ");
           });
+        });
       });
-  </script>
+    });
+  </script> -->
+
+<!-- <script>
+ 
+  function populateTemplate(data)
+  {
+      var keys = Object.keys(data);
+      for(var i =0; i< keys.length; i++) {
+        var key = keys[i];
+        var target = key;
+        document.getElementById(+ keys[i]).innerHTML = data[key];
+      }
+  }
+  document.getElementById('loadjson').addEventListener('click', function(e) {
+    e.preventDefault();
+    var jsonData = $.getJSON("init-data.json").value;
+    var data = JSON.parse(jsonData);
+    populateTemplate(data);
+  });
+  </script> -->
+
+
+  <!-- <script>
+    var jcontent = $.getJSON('init-data.json');
+    var newName = document.getElementById('name');
+
+    newName.innerHTML = jcontent.name;
+
+  </script> -->
+
 
   <script>
-    function name() {
-      var input = document.getElementById("birthDate");
-      alert(input);
+    function addBullet() {
+      console.log("ayy 7aga");
+      $("#modal-new-bullet").append('<li class="w3-display-container"><label for="name">New Field</label><input class="w3-input" id="name" name="name" type="text"><span onclick="this.parentElement.style.display=&quot; none &quot;" class="w3-button w3-display-right">&times;</span></li>');
     }
 
-    function fillmodal() {
-      console.log("ayy 7aga");
-      $("#modal-content").html('<form class="w3-container"><p><label>Full Name</label><input class="w3-input" type="text"></p><p><label>Current Name</label><input class="w3-input" type="text"></p><p><label>Email</label><input class="w3-input" type="text"></p></form>');
-      $("#modal-container").css({ display: 'block' });
-    }
-    // $("#show-modal").click(fillmodal);
+    $("#add-button").on('click',addBullet);
   </script>
 
 

@@ -1,0 +1,8 @@
+<script>
+    function addBullet() {
+      console.log("ayy 7aga");
+      $("#modal-new-bullet").append('<li class="w3-display-container"><label for="name">New Field</label><input class="w3-input" id="name" name="name" type="text"><span onclick="this.parentElement.style.display=&quot; none &quot;" class="w3-button w3-display-right">&times;</span></li>');
+    }
+
+    $("#add-button").on('click',addBullet);
+  </script>
