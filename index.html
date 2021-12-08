@@ -68,7 +68,7 @@
 
         <div class="w3-white w3-text-grey w3-card-4">
           <div class="w3-display-container">
-            <img src="portrait.jpg" style="width:100%" alt="Avatar">
+            <img src="portrait.JPG" style="width:100%" alt="Avatar">
             <div class="w3-display-bottomleft w3-container w3-text-black">
               <h2 class="w3-text-black w3-white w3-round-large animate__animated animate__pulse" id="name"> &nbsp;...&nbsp;</h2>
             </div>
@@ -185,7 +185,7 @@
         </div>
 
 
-        <div class="w3-container w3-card w3-white w3-margin-bottom animate__animated animate__fadeInUp">
+        <div class="w3-container w3-card w3-white w3-margin-bottom animate__animated animate__fadeInUp education-section">
           <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Education</h2>
 
           <div class="w3-container">
@@ -282,6 +282,7 @@
           <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Education')">Education</button>
           <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Work')">Work</button>
           <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'OtherSkills')">Other Skills</button>
+          <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Templates')">Templates</button>
          </div>
         <span onclick="document.getElementById('modal-container').style.display='none' "class="w3-button w3-display-topright">&times;</span>
         
@@ -314,16 +315,14 @@
         <div id="Education" class="w3-container tab-modal">
           <form class="w3-container w3-ul" action="#" id="modal-tester">
             <p>Education:</p>
-            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="birthdate">Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
-            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="new-email" name="email" type="email" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <div id="modal-new-bullet"></div>
+            <li class="w3-display-container"><label>Section Title</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"></li>
+            <li class="w3-display-container"><label>Start Date</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"></li>
+            <li class="w3-display-container"><label>End Date</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"></li>
+            <li class="w3-display-container"><label>Text Field</label><input class="w3-input" id="new-birthdate" name="birthdate" type="text" style="width: 90%;"></li>
+            <div id="modal-new-section"></div>
             <br>
-            <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
-            <p><input type="button" value="Save!" onclick="saveChangesP()"></p>
+            <button type="button" onclick="addSection()"><i class="fa fa-plus-circle"></i>Add new section!</button>
+            <p><input type="button" value="Save!" onclick="saveChangesE()"></p>
           </form>
         </div>
 
@@ -356,6 +355,28 @@
             <br>
             <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
             <p><input type="button" value="Save!" onclick="saveChangesP()"></p>
+          </form>
+        </div>
+
+        <div id="Templates" class="w3-container tab-modal">
+          <form class="w3-container w3-ul" action="#" id="modal-tester">
+            <p>Predefined Users:</p>
+            <p>Select a user from dropdown menu to load their resumé.</p>
+            <div class="w3-dropdown-click">
+              <button onclick="dropdown()" class="w3-button w3-black">Saved users <i class="fa fa-caret-square-o-down"></i></button>
+              <div id="dropDown" class="w3-dropdown-content w3-bar-block w3-border">
+                <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                <a href="#" class="w3-bar-item w3-button">Link 2</a>
+                <a href="#" class="w3-bar-item w3-button">Link 3</a>
+              </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p><input type="button" value="Load User!" onclick="loadUser()"></p>
           </form>
         </div>
 
@@ -434,6 +455,15 @@
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.classList.add("w3-light-grey");
     }
+
+    function dropdown() {
+      var x = document.getElementById("dropDown");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
     </script>
 
 
@@ -461,6 +491,11 @@
 
     // $("#remove-button").on('click',removeField);
 
+    function addSection() {
+      $("#modal-new-section").append('<hr><li class="w3-display-container"><label>Section Title</label><input class="w3-input" id="new-section-title" name="name" type="text" style="width: 90%;"></li><li class="w3-display-container"><label>Start Date</label><input class="w3-input" id="new-start-date" name="job" type="text" style="width: 90%;"></li><li class="w3-display-container"><label>End Date</label><input class="w3-input" id="new-end-date" name="address" type="text" style="width: 90%;"></li><li class="w3-display-container"><label>Text Field</label><input class="w3-input" id="new-section-text" name="birthdate" type="text" style="width: 90%;"></li>');
+      $(".education-section").append('<hr><div class="w3-container"><h5 class="w3-opacity" id="section-title"><b>[Section Title]</b></h5><h6 class="w3-text-blue" id="start-date"><i class="fa fa-calendar fa-fw w3-margin-right"></i>MMM YYYY - MMM YYYY</h6><p id="section-text">...</p><br></div>');
+    }
+
   function saveChangesP() {
     var name = document.getElementById("new-name").value;
     document.getElementById("name").innerHTML = "&nbsp;" + name + "&nbsp";
@@ -483,6 +518,19 @@
     var aboutText = document.getElementById("new-about-me").value;
     document.getElementById("about-me-text").innerHTML = aboutText;
 
+  }
+
+  function saveChangesE() {
+    var sectionTitle = document.getElementById("new-section-title").value;
+    document.getElementById("section-title").innerHTML = "<b>" + sectionTitle + "</b>";
+
+    var startDate = document.getElementById("new-start-date").value;
+    var endDate = document.getElementById("new-end-date").value;
+    document.getElementById("start-date").innerHTML = "<i class='fa fa-calendar fa-fw w3-margin-right'></i>" + startDate + " - " + endDate;
+
+
+    var sectionText = document.getElementById("new-section-text").value;
+    document.getElementById("section-text").innerHTML = sectionText;
   }
   </script>
 
