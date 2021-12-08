@@ -176,7 +176,7 @@
           <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>About Me</h2>
 
           <div class="w3-container">
-            <p>I'm a highly-motivated Engineering student with a massive passion for everything digital, computerzied and content creation related.
+            <p id="about-me-text">I'm a highly-motivated Engineering student with a massive passion for everything digital, computerzied and content creation related.
               I love playing all kinds of sports and spend a lot of my free time learning new skills. My bucket-list consists of plenty of travel destinations.
             </p>
           </div>
@@ -288,32 +288,26 @@
         <div id="Profile" class="w3-container tab-modal">
           <form class="w3-container w3-ul" action="#" id="modal-tester">
             <p>Profile:</p>
-            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="birthdate">Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
-            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="new-email" name="email" type="email" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label>Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label>Current Job</label><input class="w3-input" id="new-job" name="" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label>Address</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label>Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label>Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
+            <li class="w3-display-container"><label>Email</label><input class="w3-input" id="new-email" name="email" type="email" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
             <div id="modal-new-bullet"></div>
             <br>
             <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
-            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+            <p><input type="button" value="Save!" onclick="saveChangesP()"></p>
           </form>
         </div>
 
         <div id="AboutMe" class="w3-container tab-modal">
           <form class="w3-container w3-ul" action="#" id="modal-tester">
             <p>About Me:</p>
-            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <li class="w3-display-container"><label for="birthdate">Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
-            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="new-email" name="email" type="email" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
-            <div id="modal-new-bullet"></div>
+            <li class="w3-display-container"><input class="w3-input" type="text" id="new-about-me" style="width: 90%;"></li>
+
             <br>
-            <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
-            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+            <p><input type="button" value="Save!" onclick="saveChangesA()"></p>
           </form>
         </div>
 
@@ -329,7 +323,7 @@
             <div id="modal-new-bullet"></div>
             <br>
             <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
-            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+            <p><input type="button" value="Save!" onclick="saveChangesP()"></p>
           </form>
         </div>
 
@@ -345,7 +339,7 @@
             <div id="modal-new-bullet"></div>
             <br>
             <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
-            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+            <p><input type="button" value="Save!" onclick="saveChangesP()"></p>
           </form>
         </div>
 
@@ -361,7 +355,7 @@
             <div id="modal-new-bullet"></div>
             <br>
             <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
-            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+            <p><input type="button" value="Save!" onclick="saveChangesP()"></p>
           </form>
         </div>
 
@@ -467,7 +461,7 @@
 
     // $("#remove-button").on('click',removeField);
 
-  function saveChanges() {
+  function saveChangesP() {
     var name = document.getElementById("new-name").value;
     document.getElementById("name").innerHTML = "&nbsp;" + name + "&nbsp";
 
@@ -482,6 +476,12 @@
 
     var newfield = document.getElementById("new-field-" + i ).value;
     document.getElementById("field-" + i ).innerHTML = "<i class='fa fa-dot-circle-o fa-fw w3-margin-right w3-large w3-text-blue'></i>" + newfield;
+
+  }
+
+  function saveChangesA() {
+    var aboutText = document.getElementById("new-about-me").value;
+    document.getElementById("about-me-text").innerHTML = aboutText;
 
   }
   </script>
