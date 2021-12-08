@@ -21,6 +21,8 @@
     font-family: "Roboto", sans-serif
   }
 
+  .tab-modal {display:none}
+
   #parent-card:hover .card-inner {
     transform: rotateY(180deg);
   }
@@ -274,9 +276,16 @@
   <div id="modal-container" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
-        <span onclick="document.getElementById('modal-container').style.display='none'"
-          class="w3-button w3-display-topright">&times;</span>
-        <div id="modal-content">
+        <div class="w3-bar w3-border-bottom">
+          <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Profile')">Profile</button>
+          <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'AboutMe')">About Me</button>
+          <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Education')">Education</button>
+          <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'Work')">Work</button>
+          <button class="tablink w3-bar-item w3-button" onclick="openTab(event, 'OtherSkills')">Other Skills</button>
+         </div>
+        <span onclick="document.getElementById('modal-container').style.display='none' "class="w3-button w3-display-topright">&times;</span>
+        
+        <div id="Profile" class="w3-container tab-modal">
           <form class="w3-container w3-ul" action="#" id="modal-tester">
             <p>Profile:</p>
             <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
@@ -289,9 +298,73 @@
             <br>
             <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
             <p><input type="button" value="Save!" onclick="saveChanges()"></p>
-
           </form>
         </div>
+
+        <div id="AboutMe" class="w3-container tab-modal">
+          <form class="w3-container w3-ul" action="#" id="modal-tester">
+            <p>About Me:</p>
+            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
+            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="new-email" name="email" type="email" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <div id="modal-new-bullet"></div>
+            <br>
+            <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
+            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+          </form>
+        </div>
+
+        <div id="Education" class="w3-container tab-modal">
+          <form class="w3-container w3-ul" action="#" id="modal-tester">
+            <p>Education:</p>
+            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
+            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="new-email" name="email" type="email" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <div id="modal-new-bullet"></div>
+            <br>
+            <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
+            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+          </form>
+        </div>
+
+        <div id="Work" class="w3-container tab-modal">
+          <form class="w3-container w3-ul" action="#" id="modal-tester">
+            <p>Work:</p>
+            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
+            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="new-email" name="email" type="email" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <div id="modal-new-bullet"></div>
+            <br>
+            <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
+            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+          </form>
+        </div>
+
+        <div id="OtherSkills" class="w3-container tab-modal">
+          <form class="w3-container w3-ul" action="#" id="modal-tester">
+            <p>External Skills & Certifications:</p>
+            <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="address">Address</label><input class="w3-input" id="new-address" name="address" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Date of Birth</label><input class="w3-input" id="new-birthdate" name="birthdate" type="date" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <li class="w3-display-container"><label for="birthdate">Age</label><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</li>
+            <li class="w3-display-container"><label for="email">Email</label><input class="w3-input" id="new-email" name="email" type="email" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
+            <div id="modal-new-bullet"></div>
+            <br>
+            <button type="button" id="add-button"><i class="fa fa-plus-circle"></i>add new bullet</button>
+            <p><input type="button" value="Save!" onclick="saveChanges()"></p>
+          </form>
+        </div>
+
       </div>
     </div>
   </div>
@@ -350,6 +423,24 @@
 
 
   <script src="init-data.js"></script>
+
+  <script>
+    document.getElementsByClassName("tablink")[0].click();
+    
+    function openTab(evt, tabName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("tab-modal");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < x.length; i++) {
+        tablinks[i].classList.remove("w3-light-grey");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.classList.add("w3-light-grey");
+    }
+    </script>
 
 
   <script>
