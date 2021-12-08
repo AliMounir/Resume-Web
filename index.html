@@ -48,17 +48,19 @@
             </div>
           </div>
           <div class="w3-container">
-            <p id="job"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>Student at University
-              Stuttgart</p>
-            <p id="address"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Cairo, Egypt</p>
-            <p id="birthdate"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue"></i>March
-              7<sup>th</sup>, 2002 (19)</p>
-            <p id="email"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>alimounir456@gmail.com</p>
-            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>+201098847771</p>
-            <p><i class="fa fa-instagram fa-fw w3-margin-right w3-large w3-text-blue"></i>@_alimounir</p>
-            <p><i class="fa fa-code-fork fa-fw w3-margin-right w3-large w3-text-blue"></i>github.com/AliMounir</p>
-            <hr>
 
+            <div class="profile-info" >
+              <p id="job"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>Student at University
+                Stuttgart</p>
+              <p id="address"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Cairo, Egypt</p>
+              <p id="birthdate"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue"></i>March
+                7<sup>th</sup>, 2002 (19)</p>
+              <p id="email"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>alimounir456@gmail.com</p>
+              <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>+201098847771</p>
+              <p><i class="fa fa-instagram fa-fw w3-margin-right w3-large w3-text-blue"></i>@_alimounir</p>
+              <p><i class="fa fa-code-fork fa-fw w3-margin-right w3-large w3-text-blue"></i>github.com/AliMounir</p>
+            </div>
+            <hr>
 
             <!-- LANGUAGES -->
             <p class="w3-large w3-text-theme"><b><i
@@ -250,7 +252,7 @@
         <span onclick="document.getElementById('modal-container').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
         <div id="modal-content">
-          <form class="w3-container w3-ul" action="#">
+          <form class="w3-container w3-ul" action="#" id="modal-tester">
             <p>Profile:</p>
             <li class="w3-display-container"><label for="name">Full Name</label><input class="w3-input" id="new-name" name="name" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
             <li class="w3-display-container"><label for="job">Current Job</label><input class="w3-input" id="new-job" name="job" type="text" style="width: 90%;"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">&times;</span></li>
@@ -308,25 +310,39 @@
   </script> -->
 
 
-  <!-- <script>
+  <script>
     var jcontent = $.getJSON('init-data.json');
     var newName = document.getElementById('name');
 
     newName.innerHTML = jcontent.name;
 
-  </script> -->
+  </script>
 
 
   <script>
+    var i = 0;
+
     function addBullet() {
-      console.log("ayy 7aga");
-      $("#modal-new-bullet").append('<li class="w3-display-container"><label for="name">New Field</label><input class="w3-input" id="name" name="name" type="text"><span onclick="this.parentElement.style.display=&quot; none &quot;" class="w3-button w3-display-right">&times;</span></li>');
+      console.log(i);
+      i++;
+      console.log(i);
+      $("#modal-new-bullet").append('<li class="w3-display-container" id="new-field-' + i + '"><label for="name">New Field 0' + i + '</label><input class="w3-input" type="text"><span onclick="removeField()" class="w3-button w3-display-right">&times;</span></li>');
+      $(".profile-info").append('<p id="field-' + i + '"><i class="fa fa-dot-circle-o fa-fw w3-margin-right w3-large w3-text-blue"></i></p>');
+      //
     }
 
     $("#add-button").on('click',addBullet);
-  </script>
 
-  <script>
+    function removeField() {
+      
+      document.getElementById("new-field-" + i).remove();
+      document.getElementById("field-" + i).remove();
+      i--;
+
+    }
+
+    // $("#remove-button").on('click',removeField);
+
   function saveChanges() {
     var name = document.getElementById("new-name").value;
     document.getElementById("name").innerHTML = "&nbsp;" + name + "&nbsp";
@@ -339,6 +355,9 @@
 
     var birthdate = document.getElementById("new-birthdate").value;
     document.getElementById("birthdate").innerHTML = "<i class='fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-blue'></i>" + birthdate;
+
+    var newfield = document.getElementById("new-field-" + i ).value;
+    document.getElementById("field-" + i ).innerHTML = "<i class='fa fa-dot-circle-o fa-fw w3-margin-right w3-large w3-text-blue'></i>" + newfield;
 
   }
   </script>
